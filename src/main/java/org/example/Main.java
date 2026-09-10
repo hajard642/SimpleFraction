@@ -18,10 +18,22 @@ public class Main {
         System.out.println(fraction2);
         System.out.println(fraction3);
 
-        Fraction fraction = new Fraction(2, 3);
+        //Fraction fraction = new Fraction(2, 3);
 
-        assert fraction.getNumerator() == 2;
-        assert fraction.getDenominator() == 3;
+        //assert fraction.getNumerator() == 2;
+        //assert fraction.getDenominator() == 3;
 
+        Fraction fraction = new Fraction(1, 2);
+
+        assert Math.abs(fraction.doubleValue() - 0.5) < 1E-8;
+
+
+        Fraction f1 = new Fraction(1, 2);
+        Fraction f2 = new Fraction(1, 3);
+
+        Fraction result = f1.add(f2);
+
+        assert result.getNumerator() == 5;
+        assert result.getDenominator() == 6;
     }
 }

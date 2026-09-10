@@ -30,4 +30,18 @@ public class Fraction {
     public int getDenominator() {
         return denominator;
     }
+
+    public double doubleValue() {
+        return (double) numerator / denominator;
+    }
+    public Fraction add(Fraction other) {
+        int newNumerator = numerator * other.denominator
+                + other.numerator * denominator;
+
+        int newDenominator = denominator * other.denominator;
+
+        return new Fraction(newNumerator, newDenominator);
+    }
+
+
 }
