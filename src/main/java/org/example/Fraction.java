@@ -95,4 +95,8 @@ public class Fraction extends Number implements Comparable<Fraction> {
     public short shortValue() {
         return (short) (numerator / denominator);
     }
+
 }
+
+
+
