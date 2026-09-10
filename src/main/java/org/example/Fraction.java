@@ -1,6 +1,6 @@
 package org.example;
 
-public class Fraction {
+public class Fraction implements Comparable<Fraction> {
     private int numerator;
     private int denominator;
     public static final Fraction ZERO = new Fraction(0, 1);
@@ -34,6 +34,7 @@ public class Fraction {
     public double doubleValue() {
         return (double) numerator / denominator;
     }
+
     public Fraction add(Fraction other) {
         int newNumerator = numerator * other.denominator
                 + other.numerator * denominator;
@@ -42,6 +43,27 @@ public class Fraction {
 
         return new Fraction(newNumerator, newDenominator);
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
 
+        if (!(obj instanceof Fraction)) {
+            return false;
+        }
 
+        Fraction other = (Fraction) obj;
+
+        return numerator * other.denominator
+                == other.numerator * denominator;
+
+    }
+    @Override
+    public int compareTo(Fraction other) {
+        return Integer.compare(
+                numerator * other.denominator,
+                other.numerator * denominator
+        );
+    }
 }

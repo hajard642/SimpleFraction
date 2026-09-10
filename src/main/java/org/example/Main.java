@@ -35,5 +35,19 @@ public class Main {
 
         assert result.getNumerator() == 5;
         assert result.getDenominator() == 6;
+        Fraction f4 = new Fraction(1, 2);
+        Fraction f5 = new Fraction(2, 4);
+        Fraction f6 = new Fraction(2, 3);
+
+        assert f1.equals(f5);
+        assert !f1.equals(f6);
+
+        Fraction f7 = new Fraction(1, 2);
+        Fraction f8 = new Fraction(2, 3);
+        Fraction f9 = new Fraction(1, 2);
+
+        assert f1.compareTo(f8) < 0;
+        assert f2.compareTo(f7) > 0;
+        assert f1.compareTo(f9) == 0;
     }
 }
