@@ -1,6 +1,6 @@
 package org.example;
 
-public class Fraction implements Comparable<Fraction> {
+public class Fraction extends Number implements Comparable<Fraction> {
     private int numerator;
     private int denominator;
     public static final Fraction ZERO = new Fraction(0, 1);
@@ -31,9 +31,9 @@ public class Fraction implements Comparable<Fraction> {
         return denominator;
     }
 
-    public double doubleValue() {
-        return (double) numerator / denominator;
-    }
+    //public double doubleValue() {
+     //   return (double) numerator / denominator;
+   // }
 
     public Fraction add(Fraction other) {
         int newNumerator = numerator * other.denominator
@@ -65,5 +65,34 @@ public class Fraction implements Comparable<Fraction> {
                 numerator * other.denominator,
                 other.numerator * denominator
         );
+    }
+    @Override
+    public int intValue() {
+        return numerator / denominator;
+    }
+
+    @Override
+    public long longValue() {
+        return (long) numerator / denominator;
+    }
+
+    @Override
+    public float floatValue() {
+        return (float) numerator / denominator;
+    }
+
+    @Override
+    public double doubleValue() {
+        return (double) numerator / denominator;
+    }
+
+    @Override
+    public byte byteValue() {
+        return (byte) (numerator / denominator);
+    }
+
+    @Override
+    public short shortValue() {
+        return (short) (numerator / denominator);
     }
 }
