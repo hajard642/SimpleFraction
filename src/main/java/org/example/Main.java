@@ -23,9 +23,9 @@ public class Main {
         //assert fraction.getNumerator() == 2;
         //assert fraction.getDenominator() == 3;
 
-        Fraction fraction = new Fraction(1, 2);
+        //Fraction fraction = new Fraction(1, 2);
 
-        assert Math.abs(fraction.doubleValue() - 0.5) < 1E-8;
+        //assert Math.abs(fraction.doubleValue() - 0.5) < 1E-8;
 
 
         Fraction f1 = new Fraction(1, 2);
@@ -49,5 +49,12 @@ public class Main {
         assert f1.compareTo(f8) < 0;
         assert f2.compareTo(f7) > 0;
         assert f1.compareTo(f9) == 0;
+
+        Number aNumber = java.math.BigDecimal.ONE;
+        Number anotherNumber = new Fraction(1, 2);
+
+        assert Math.abs(
+                aNumber.doubleValue() + anotherNumber.doubleValue() - 1.5
+        ) < 1E-8;
     }
 }
