@@ -1,14 +1,18 @@
 package org.example;
 
 public class Fraction extends Number implements Comparable<Fraction> {
+
     private int numerator;
     private int denominator;
+
     public static final Fraction ZERO = new Fraction(0, 1);
     public static final Fraction UN = new Fraction(1, 1);
+
     @Override
     public String toString() {
         return "Je suis une fraction.";
     }
+
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
@@ -23,6 +27,7 @@ public class Fraction extends Number implements Comparable<Fraction> {
         this.numerator = 0;
         this.denominator = 1;
     }
+
     public int getNumerator() {
         return numerator;
     }
@@ -30,10 +35,6 @@ public class Fraction extends Number implements Comparable<Fraction> {
     public int getDenominator() {
         return denominator;
     }
-
-    //public double doubleValue() {
-     //   return (double) numerator / denominator;
-   // }
 
     public Fraction add(Fraction other) {
         int newNumerator = numerator * other.denominator
@@ -43,6 +44,7 @@ public class Fraction extends Number implements Comparable<Fraction> {
 
         return new Fraction(newNumerator, newDenominator);
     }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -57,8 +59,8 @@ public class Fraction extends Number implements Comparable<Fraction> {
 
         return numerator * other.denominator
                 == other.numerator * denominator;
-
     }
+
     @Override
     public int compareTo(Fraction other) {
         return Integer.compare(
@@ -66,6 +68,7 @@ public class Fraction extends Number implements Comparable<Fraction> {
                 other.numerator * denominator
         );
     }
+
     @Override
     public int intValue() {
         return numerator / denominator;
@@ -95,8 +98,4 @@ public class Fraction extends Number implements Comparable<Fraction> {
     public short shortValue() {
         return (short) (numerator / denominator);
     }
-
 }
-
-
-
